@@ -11,16 +11,15 @@ const server = http.createServer(function (req, res) {
   //Return the url part of the request object:
   res.write(req.url);
   res.end();
-});
-
-server.listen(port, (err) => {
-  if (err) {
-    return console.log('something bad happened', err)
-  }
+  
   
 
-  console.log(`server is listening on ${port}`)
-})
 
 
+});
 
+server.listen(process.env.PORT, process.env.IP);
+
+console.log('RESTful API server started on: ' + process.env.IP);
+console.log('RESTful API server started on: ' + process.env.PORT);
+console.log(process.env);
